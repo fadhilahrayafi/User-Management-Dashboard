@@ -1,18 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, reset } from "../redux/slices/counterSlice";
-import { RootState } from "../redux/store";
+import UserTable from "../components/UserTable";
+import { Box, Heading } from "@chakra-ui/react";
 
 function Dashboard() {
-  const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch();
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Counter: {count}</h1>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
-      <button onClick={() => dispatch(reset())}>Reset</button>
-    </div>
+    <Box p={5}>
+        <Heading mb={4} color="#F7D9C4">User Data</Heading>
+        <UserTable/>
+    </Box>
   );
 }
 

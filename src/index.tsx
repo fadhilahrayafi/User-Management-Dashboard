@@ -4,9 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import store from "./redux/store";
 import { ChakraProvider } from "@chakra-ui/react";
-import { defaultSystem } from "@chakra-ui/react"
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ChakraProvider value={defaultSystem}>
+      <ChakraProvider>
         <App />
       </ChakraProvider>
     </Provider>
